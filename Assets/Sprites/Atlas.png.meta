@@ -3,7 +3,7 @@ guid: c78bb24fb8d0c14449ae702ceb3d14a1
 TextureImporter:
   fileIDToRecycleName:
     21300000: Torso
-    21300002: Atlas_1
+    21300002: Puntos
     21300004: Cola2
     21300006: Bloque1
     21300008: Cola1
@@ -67,7 +67,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Atlas_1
+    - name: Puntos
       rect:
         serializedVersion: 2
         x: 100
@@ -75,7 +75,7 @@ TextureImporter:
         width: 68
         height: 82
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Cola2
       rect:
