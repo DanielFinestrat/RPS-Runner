@@ -8,10 +8,6 @@ public class PlayerController : MonoBehaviour {
 	public LayerMask ground;
 	public Transform OPA, OPB;
 
-	void Start () {
-	
-	}
-
 	void Update () {
 		if(Input.GetMouseButton(0) && grounded){
 			rigidbody2D.AddForce(new Vector2(0,fuerzaSalto));
