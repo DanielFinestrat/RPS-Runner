@@ -4,12 +4,15 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
 	public float fuerzaSalto = 200f;
+	public float velocidadMovimiento = 200f;
 
 	public LayerMask ground;
 	public Transform OPA, OPB;
 
 	private bool grounded = true;
 	private bool slideing = false;
+	private bool running = false;
+	private bool allowDoubleJump = true;
 
 	private Animator animator;
 
@@ -17,22 +20,30 @@ public class PlayerController : MonoBehaviour {
 		animator = GetComponent<Animator> ();
 		NotificationCenter.DefaultCenter().AddObserver(this, "swipeDown");
 		NotificationCenter.DefaultCenter().AddObserver(this, "screenTouched");
+		NotificationCenter.DefaultCenter().AddObserver(this, "StartRunning");
+	}
+
+	void StartRunning(Notification notification){
+		running = true;
 	}
 
 	void FixedUpdate (){
 		grounded = Physics2D.OverlapArea (OPA.position, OPB.position, ground);
+		animator.SetBool ("grounded", grounded);
 	}
 
 	void Update () {
 
+		if(running)
+			rigidbody2D.velocity = new Vector2 (velocidadMovimiento, rigidbody2D.velocity.y);
+
 		//################ PC DEBUGGING CONTROLS ################
 
-		if(Input.GetKeyDown("up") && grounded && !slideing){
-			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x,fuerzaSalto);
+		if(Input.GetKeyDown("up")){
+			jump ();
 		}
-		if(Input.GetKeyDown("down") && grounded){
-			slideing = true;
-			animator.SetBool("slideing", slideing);
+		if(Input.GetKeyDown("down")){
+			slide ();
 		}
 
 		//################ PC DEBUGGING CONTROLS ################
@@ -40,16 +51,34 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void swipeDown(Notification notification){
-		if(grounded)
-			slideing = true;
-			animator.SetBool("slideing", slideing);
+		slide ();
 	}
 
 	void screenTouched(Notification notification){
-		if(grounded && !slideing)
-			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x,fuerzaSalto);
+		jump ();
 	}
-	
+
+	void slide(){
+		if (running && grounded) {
+			slideing = true;
+			animator.SetBool ("slideing", slideing);
+		}
+	}
+
+	void jump(){
+		if(running && !slideing){
+
+			if (grounded)
+				rigidbody2D.velocity =  new Vector2 (rigidbody2D.velocity.y, fuerzaSalto);
+			else if (!grounded && allowDoubleJump)
+				rigidbody2D.velocity =  new Vector2 (rigidbody2D.velocity.y, fuerzaSalto);
+
+			if (grounded) allowDoubleJump = true;
+			else allowDoubleJump = false;
+
+		}
+	}
+
 	void stopSlideing(){
 		slideing = false;
 		animator.SetBool ("slideing", slideing);
