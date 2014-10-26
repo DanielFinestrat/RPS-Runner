@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour {
 
 	void Awake(){
 		animator = GetComponent<Animator> ();
+		NotificationCenter.DefaultCenter().AddObserver(this, "swipeDown");
+		NotificationCenter.DefaultCenter().AddObserver(this, "screenTouched");
 	}
 
 	void FixedUpdate (){
@@ -22,6 +24,9 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Update () {
+
+		//################ PC DEBUGGING CONTROLS ################
+
 		if(Input.GetKeyDown("up") && grounded && !slideing){
 			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x,fuerzaSalto);
 		}
@@ -29,8 +34,22 @@ public class PlayerController : MonoBehaviour {
 			slideing = true;
 			animator.SetBool("slideing", slideing);
 		}
+
+		//################ PC DEBUGGING CONTROLS ################
+
 	}
 
+	void swipeDown(Notification notification){
+		if(grounded)
+			slideing = true;
+			animator.SetBool("slideing", slideing);
+	}
+
+	void screenTouched(Notification notification){
+		if(grounded && !slideing)
+			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x,fuerzaSalto);
+	}
+	
 	void stopSlideing(){
 		slideing = false;
 		animator.SetBool ("slideing", slideing);
