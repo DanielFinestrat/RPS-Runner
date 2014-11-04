@@ -20,10 +20,15 @@ public class PlayerController : MonoBehaviour {
 		animator = GetComponent<Animator> ();
 		NotificationCenter.DefaultCenter().AddObserver(this, "swipeDown");
 		NotificationCenter.DefaultCenter().AddObserver(this, "screenTouched");
-		NotificationCenter.DefaultCenter().AddObserver(this, "StartRunning");
+		NotificationCenter.DefaultCenter().AddObserver(this, "startRunning");
+		NotificationCenter.DefaultCenter().AddObserver(this, "playerIsDead");
 	}
 
-	void StartRunning(Notification notification){
+	void playerIsDead(Notification notification){
+		Application.LoadLevel ("GameScene");
+	}
+	
+	void startRunning(Notification notification){
 		running = true;
 	}
 
@@ -37,16 +42,14 @@ public class PlayerController : MonoBehaviour {
 		if(running)
 			rigidbody2D.velocity = new Vector2 (velocidadMovimiento, rigidbody2D.velocity.y);
 
-		//################ PC DEBUGGING CONTROLS ################
-
+		#if UNITY_EDITOR
 		if(Input.GetKeyDown("up")){
 			jump ();
 		}
 		if(Input.GetKeyDown("down")){
 			slide ();
 		}
-
-		//################ PC DEBUGGING CONTROLS ################
+		#endif
 
 	}
 

@@ -7,16 +7,21 @@ public class Generator : MonoBehaviour {
 	public float timeMin = 5f;
 	public float timeMax = 5f;
 
+	private bool firstTime = true;
+
 	void Start(){
-		NotificationCenter.DefaultCenter().AddObserver(this, "StartRunning");
+		NotificationCenter.DefaultCenter().AddObserver(this, "startRunning");
 	}
 
-	void StartRunning(Notification notification){
+	void startRunning(Notification notification){
 		generate ();
 	}
 
 	void generate(){
-		Instantiate (obj [Random.Range (0, obj.Length)], transform.position, Quaternion.identity);
+
+		if (!firstTime) Instantiate (obj [Random.Range (0, obj.Length)], transform.position, Quaternion.identity);
+		else firstTime = false;
+
 		Invoke ("generate", Random.Range (timeMin, timeMax));
 	}
 

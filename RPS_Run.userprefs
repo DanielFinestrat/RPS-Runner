@@ -1,10 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\KillerObject.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Generator.cs">
     <Files>
-      <File FileName="Assets\Scripts\Destructor.cs" Line="6" Column="1" />
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="78" Column="4" />
-      <File FileName="Assets\Scripts\KillerObject.cs" Line="8" Column="11" />
+      <File FileName="Assets\Scripts\Generator.cs" Line="22" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -3,12 +3,12 @@ guid: cce0f27b3592f424d87b9a2787d9f2e1
 TrueTypeFontImporter:
   serializedVersion: 2
   fontSize: 128
-  forceTextureCase: 0
+  forceTextureCase: 3
   characterSpacing: 1
   characterPadding: 0
   includeFontData: 1
   use2xBehaviour: 0
   fontNames: []
-  customCharacters: 
+  customCharacters: Let's RUN!1234567890
   fontRenderingMode: 0
   userData: 
