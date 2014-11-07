@@ -24,13 +24,7 @@ public class PlayerController : MonoBehaviour {
 		NotificationCenter.DefaultCenter().AddObserver(this, "playerIsDead");
 	}
 
-	void playerIsDead(Notification notification){
-		Application.LoadLevel ("GameScene");
-	}
-	
-	void startRunning(Notification notification){
-		running = true;
-	}
+	//###################################### UPDATES ######################################
 
 	void FixedUpdate (){
 		grounded = Physics2D.OverlapArea (OPA.position, OPB.position, ground);
@@ -53,13 +47,10 @@ public class PlayerController : MonoBehaviour {
 
 	}
 
-	void swipeDown(Notification notification){
-		slide ();
-	}
+	//###################################### UPDATES ######################################
 
-	void screenTouched(Notification notification){
-		jump ();
-	}
+
+	//###################################### ACTIONS ######################################
 
 	void slide(){
 		if (running && grounded) {
@@ -86,5 +77,30 @@ public class PlayerController : MonoBehaviour {
 		slideing = false;
 		animator.SetBool ("slideing", slideing);
 	}
+
+	//###################################### ACTIONS ######################################
+
+
+	//###################################### NOTIFICATIONS ######################################
+
+	void swipeDown(Notification notification){
+		slide ();
+	}
+	
+	void screenTouched(Notification notification){
+		jump ();
+	}
+	
+	void playerIsDead(Notification notification){
+		Application.LoadLevel ("GameScene");
+		/*running = false;
+		Destroy (this.gameObject);*/
+	}
+	
+	void startRunning(Notification notification){
+		running = true;
+	}
+
+	//###################################### NOTIFICATIONS ######################################
 
 }

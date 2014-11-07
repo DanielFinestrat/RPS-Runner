@@ -7,22 +7,28 @@ public class Generator : MonoBehaviour {
 	public float timeMin = 5f;
 	public float timeMax = 5f;
 
+	private bool dead = false;
 	private bool firstTime = true;
 
 	void Start(){
 		NotificationCenter.DefaultCenter().AddObserver(this, "startRunning");
+		NotificationCenter.DefaultCenter().AddObserver(this, "playerIsDead");
 	}
 
 	void startRunning(Notification notification){
 		generate ();
 	}
 
+	void playerIsDead(Notification notification){
+		dead = true;
+	}
+
 	void generate(){
 
-		if (!firstTime) Instantiate (obj [Random.Range (0, obj.Length)], transform.position, Quaternion.identity);
+		if (!firstTime && !dead) Instantiate (obj [Random.Range (0, obj.Length)], transform.position, Quaternion.identity);
 		else firstTime = false;
 
-		Invoke ("generate", Random.Range (timeMin, timeMax));
+		if(!dead) Invoke ("generate", Random.Range (timeMin, timeMax));
 	}
 
 }
