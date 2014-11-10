@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class TouchControl : MonoBehaviour {
-	
-	// Values to set:
+
 	public float comfortZone = 70.0f;
 	public float minSwipeDist = 14.0f;
 	public float maxSwipeTime = 0.5f;
@@ -37,11 +36,11 @@ public class TouchControl : MonoBehaviour {
 				startTime = Time.time;
 				break;
 				
-			case TouchPhase.Moved:
+			/*case TouchPhase.Moved:
 				if (Mathf.Abs(touch.position.x - startPos.x) > comfortZone)
 					couldBeSwipe = false;
 				break;
-
+			*/
 			case TouchPhase.Ended:
 				if (couldBeSwipe){
 
@@ -52,9 +51,14 @@ public class TouchControl : MonoBehaviour {
 
 						float swipeValue = Mathf.Sign(touch.position.y - startPos.y);
 
-						if (swipeValue > 0)
+						if (swipeValue > 0){
 							lastSwipe = TouchControl.SwipeDirection.Up;
-
+						
+							// ############# SWIPE UP #############
+						
+							NotificationCenter.DefaultCenter().PostNotification(this, "swipeUp");
+						
+						}
 						else if (swipeValue < 0){
 							lastSwipe = TouchControl.SwipeDirection.Down;
 
@@ -66,7 +70,7 @@ public class TouchControl : MonoBehaviour {
 
 						lastSwipeTime = Time.time;
 
-					}else if(swipeDist < minSwipeDist){
+					}else if(swipeDist < minSwipeDist && swipeTime < maxSwipeTime){
 
 						// ############# JUST ONE TAP #############
 

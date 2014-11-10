@@ -13,12 +13,14 @@ public class PlayerController : MonoBehaviour {
 	private bool slideing = false;
 	private bool running = false;
 	private bool allowDoubleJump = true;
+	private bool dead = false;
 
 	private Animator animator;
 
 	void Awake(){
 		animator = GetComponent<Animator> ();
 		NotificationCenter.DefaultCenter().AddObserver(this, "swipeDown");
+		NotificationCenter.DefaultCenter().AddObserver(this, "swipeUp");
 		NotificationCenter.DefaultCenter().AddObserver(this, "screenTouched");
 		NotificationCenter.DefaultCenter().AddObserver(this, "startRunning");
 		NotificationCenter.DefaultCenter().AddObserver(this, "playerIsDead");
@@ -78,6 +80,11 @@ public class PlayerController : MonoBehaviour {
 		animator.SetBool ("slideing", slideing);
 	}
 
+	void SetPlayerUnactive(){
+		this.gameObject.SetActive (false);
+		Application.LoadLevel ("GameScene");
+	}
+
 	//###################################### ACTIONS ######################################
 
 
@@ -90,11 +97,15 @@ public class PlayerController : MonoBehaviour {
 	void screenTouched(Notification notification){
 		jump ();
 	}
-	
+
+
+	void swipeUp(Notification notification){
+		jump ();
+	}
 	void playerIsDead(Notification notification){
-		Application.LoadLevel ("GameScene");
-		/*running = false;
-		Destroy (this.gameObject);*/
+		running = false;
+		dead = true;
+		animator.SetBool ("dead", dead);
 	}
 	
 	void startRunning(Notification notification){

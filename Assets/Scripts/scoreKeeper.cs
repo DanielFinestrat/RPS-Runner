@@ -3,12 +3,13 @@ using System.Collections;
 
 public class scoreKeeper : MonoBehaviour {
 
-	public int score = 0;
+	private int score = 0;
 	public int valorMoneda = 100;
 	public TextMesh scoreBoard;
 
 	void Awake() {
 		NotificationCenter.DefaultCenter().AddObserver(this, "getCoin");
+		NotificationCenter.DefaultCenter().AddObserver(this, "playerIsDead");
 		updateScore ();
 	}
 
@@ -21,4 +22,9 @@ public class scoreKeeper : MonoBehaviour {
 		updateScore ();
 	}
 
+	void playerIsDead(Notification notification){
+		if (score > DataShare.dataShare.maxScore) {
+			DataShare.dataShare.maxScore = score;
+		}
+	}
 }
