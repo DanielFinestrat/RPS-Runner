@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class HorizontalSwipe : MonoBehaviour {
-	
-	// Values to set:
+
 	public float comfortZone = 70.0f;
 	public float minSwipeDist = 14.0f;
 	public float maxSwipeTime = 0.5f;
@@ -37,10 +36,10 @@ public class HorizontalSwipe : MonoBehaviour {
 				startTime = Time.time;
 				break;
 				
-			case TouchPhase.Moved:
+			/*case TouchPhase.Moved:
 				if (Mathf.Abs(touch.position.y - startPos.y) > comfortZone)
 					couldBeSwipe = false;
-				break;
+				break;*/
 				
 			case TouchPhase.Ended:
 				if (couldBeSwipe){
@@ -53,8 +52,11 @@ public class HorizontalSwipe : MonoBehaviour {
 						float swipeValue = Mathf.Sign(touch.position.x - startPos.x);
 						
 						if (swipeValue > 0){
+
 							// ############# RightSwipe #############
+
 							lastSwipe = HorizontalSwipe.SwipeDirection.Right;
+
 							NotificationCenter.DefaultCenter().PostNotification(this, "swipeRight");
 						}
 

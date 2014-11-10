@@ -49,9 +49,6 @@ public class PlayerController : MonoBehaviour {
 
 	}
 
-	//###################################### UPDATES ######################################
-
-
 	//###################################### ACTIONS ######################################
 
 	void slide(){
@@ -82,11 +79,7 @@ public class PlayerController : MonoBehaviour {
 
 	void SetPlayerUnactive(){
 		this.gameObject.SetActive (false);
-		Application.LoadLevel ("GameScene");
 	}
-
-	//###################################### ACTIONS ######################################
-
 
 	//###################################### NOTIFICATIONS ######################################
 
@@ -97,7 +90,6 @@ public class PlayerController : MonoBehaviour {
 	void screenTouched(Notification notification){
 		jump ();
 	}
-
 
 	void swipeUp(Notification notification){
 		jump ();
@@ -111,7 +103,5 @@ public class PlayerController : MonoBehaviour {
 	void startRunning(Notification notification){
 		running = true;
 	}
-
-	//###################################### NOTIFICATIONS ######################################
 
 }

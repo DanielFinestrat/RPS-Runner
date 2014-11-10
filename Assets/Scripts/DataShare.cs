@@ -7,7 +7,7 @@ using System.IO;
 public class DataShare : MonoBehaviour {
 
 	public static DataShare dataShare;
-	public int maxScore = 0;
+	public int highScore = 0;
 	private string route;
 
 	void Awake () {
@@ -31,7 +31,7 @@ public class DataShare : MonoBehaviour {
 		FileStream file = File.Create(route);
 		
 		toSave datos = new toSave();
-		datos.maxScore = maxScore;
+		datos.highScore = highScore;
 		
 		bf.Serialize(file, datos);
 		
@@ -45,11 +45,11 @@ public class DataShare : MonoBehaviour {
 			
 			toSave datos = (toSave) bf.Deserialize(file);
 			
-			maxScore = datos.maxScore;
+			highScore = datos.highScore;
 			
 			file.Close();
 		}else{
-			maxScore = 0;
+			highScore = 0;
 		}
 	}
 
@@ -57,5 +57,5 @@ public class DataShare : MonoBehaviour {
 
 [Serializable]
 class toSave{
-	public int maxScore;
+	public int highScore;
 }

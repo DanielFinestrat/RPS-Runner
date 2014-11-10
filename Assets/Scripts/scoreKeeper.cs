@@ -3,7 +3,7 @@ using System.Collections;
 
 public class scoreKeeper : MonoBehaviour {
 
-	private int score = 0;
+	public int score = 0;
 	public int valorMoneda = 100;
 	public TextMesh scoreBoard;
 
@@ -23,8 +23,8 @@ public class scoreKeeper : MonoBehaviour {
 	}
 
 	void playerIsDead(Notification notification){
-		if (score > DataShare.dataShare.maxScore) {
-			DataShare.dataShare.maxScore = score;
+		if (score > DataShare.dataShare.highScore) {
+			DataShare.dataShare.highScore = score;
 		}
 	}
 }

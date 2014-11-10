@@ -5,16 +5,17 @@ public class Destructor : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D toDestroy){
 
-		if (this.gameObject.tag == "KillerEraser") {
+		if(toDestroy.gameObject.tag != "Button"){
 
-			if (toDestroy.tag == "Killer") Destroy (toDestroy.gameObject);
+			if (this.gameObject.tag == "KillerEraser") {
+				if (toDestroy.tag == "Killer") Destroy (toDestroy.gameObject);
 
-		} else if (toDestroy.tag == "Player") {
+			}else if (toDestroy.tag == "Player") {
+				NotificationCenter.DefaultCenter ().PostNotification (this, "playerIsDead");
 
-			NotificationCenter.DefaultCenter ().PostNotification (this, "playerIsDead");
+			}else 
+				Destroy (toDestroy.gameObject);
 
-		} else
-			Destroy (toDestroy.gameObject);
-
+		}
 	}
 }
