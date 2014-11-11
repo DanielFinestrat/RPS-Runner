@@ -9,6 +9,7 @@ public class UpdateValuesOnDeath : MonoBehaviour {
 	public scoreKeeper scoreKeeper;
 
 	void OnEnable(){
+		DataShare.dataShare.Save();
 		Score.text = scoreKeeper.score.ToString();
 		HighScore.text = DataShare.dataShare.highScore.ToString();
 	}
