@@ -3,9 +3,19 @@ using System.Collections;
 
 public class LoadLevelButton : MonoBehaviour {
 
+	public bool quitButton = false;
 	public string levelName;
 
+
 	void OnMouseDown(){
-		Application.LoadLevel (levelName);
+		if(quitButton){
+			Application.Quit();
+
+			#if UNITY_EDITOR
+				Debug.Break();
+			#endif
+
+		}
+		else Application.LoadLevel (levelName);
 	}
 }

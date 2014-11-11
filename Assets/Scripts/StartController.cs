@@ -16,7 +16,7 @@ public class StartController : MonoBehaviour {
 		}
 	}
 	
-	#if UNITY_EDITOR
+	#if UNITY_EDITOR || UNITY_STANDALONE_WIN
 	void OnMouseDown(){
 		if(!alreadyRunning){
 			NotificationCenter.DefaultCenter().PostNotification (this, "startRunning");

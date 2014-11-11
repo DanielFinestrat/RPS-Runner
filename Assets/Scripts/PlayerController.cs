@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour {
 		if(running)
 			rigidbody2D.velocity = new Vector2 (velocidadMovimiento, rigidbody2D.velocity.y);
 
-		#if UNITY_EDITOR
+		#if UNITY_EDITOR || UNITY_STANDALONE_WIN
 		if(Input.GetKeyDown("up")){
 			jump ();
 		}
