@@ -51,6 +51,8 @@
      <Compile Include="Assets\Scripts\AspectUtility.cs" />
      <Compile Include="Assets\Scripts\DataShare.cs" />
      <Compile Include="Assets\Scripts\Destructor.cs" />
+     <Compile Include="Assets\Scripts\DistanceCounter.cs" />
+     <Compile Include="Assets\Scripts\EraseScore.cs" />
      <Compile Include="Assets\Scripts\FadeText.cs" />
      <Compile Include="Assets\Scripts\FollowPlayer.cs" />
      <Compile Include="Assets\Scripts\Generator.cs" />
@@ -64,6 +66,7 @@
      <Compile Include="Assets\Scripts\TouchControl.cs" />
      <Compile Include="Assets\Scripts\UpdateValuesOnDeath.cs" />
      <Compile Include="Assets\Scripts\scoreKeeper.cs" />
+     <Compile Include="Assets\Scripts\showScore.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

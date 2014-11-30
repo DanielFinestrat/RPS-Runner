@@ -14,7 +14,7 @@ public class scoreKeeper : MonoBehaviour {
 	}
 
 	void updateScore(){
-		scoreBoard.text = score.ToString ();
+		scoreBoard.text = score.ToString () + "$";
 	}
 
 	void getCoin(Notification notification){
@@ -24,6 +24,7 @@ public class scoreKeeper : MonoBehaviour {
 
 	void playerIsDead(Notification notification){
 		if (score > DataShare.dataShare.highScore) {
+			NotificationCenter.DefaultCenter().PostNotification(this, "newHighScore");
 			DataShare.dataShare.highScore = score;
 		}
 	}

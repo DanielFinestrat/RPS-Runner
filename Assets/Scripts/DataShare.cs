@@ -7,8 +7,10 @@ using System.IO;
 public class DataShare : MonoBehaviour {
 
 	public static DataShare dataShare;
-	public int highScore = 0;
 	private string route;
+
+	public int highScore = 0;
+	public int maxDistance = 0;
 
 	void Awake () {
 
@@ -32,6 +34,7 @@ public class DataShare : MonoBehaviour {
 		
 		toSave datos = new toSave();
 		datos.highScore = highScore;
+		datos.maxDistance = maxDistance;
 		
 		bf.Serialize(file, datos);
 		
@@ -46,10 +49,12 @@ public class DataShare : MonoBehaviour {
 			toSave datos = (toSave) bf.Deserialize(file);
 			
 			highScore = datos.highScore;
+			maxDistance = datos.maxDistance;
 			
 			file.Close();
 		}else{
 			highScore = 0;
+			maxDistance = 0;
 		}
 	}
 
@@ -58,4 +63,5 @@ public class DataShare : MonoBehaviour {
 [Serializable]
 class toSave{
 	public int highScore;
+	public int maxDistance;
 }
