@@ -102,7 +102,6 @@ public class PlayerController : MonoBehaviour {
 	
 	void startRunning(Notification notification){
 		running = true;
-		animator.SetBool ("running", running);
 	}
 
 }
