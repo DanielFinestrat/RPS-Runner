@@ -1,0 +1,32 @@
+﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.SocialPlatforms;
+using GooglePlayGames;
+
+public class Ranking : MonoBehaviour {
+
+	private TextMesh button;
+
+	void Awake(){
+		button = GetComponent<TextMesh> ();
+	}
+
+	void Update(){
+		if(Social.localUser.authenticated) button.color = Color.black;
+		else button.color = Color.gray;
+	}
+
+	void OnMouseDown(){
+
+		if(audio)audio.Play ();
+
+		if(Social.localUser.authenticated){
+			((PlayGamesPlatform)Social.Active).ShowLeaderboardUI("CgkIgerN_qwBEAIQCA");
+		}
+		else{ 
+			Social.localUser.Authenticate((bool success) => {});
+		}
+
+	}
+
+}

@@ -8,6 +8,19 @@ public class LoadLevelButton : MonoBehaviour {
 
 
 	void OnMouseDown(){
+
+		//Camera.main.audio.Stop();
+		if(audio){
+			audio.Play ();
+			Invoke ("loadLevel", audio.clip.length);
+		}else{
+			Invoke ("loadLevel", 0f);
+		}
+
+	}
+
+	void loadLevel(){
+
 		if(quitButton){
 			Application.Quit();
 
@@ -17,5 +30,6 @@ public class LoadLevelButton : MonoBehaviour {
 
 		}
 		else Application.LoadLevel (levelName);
+
 	}
 }

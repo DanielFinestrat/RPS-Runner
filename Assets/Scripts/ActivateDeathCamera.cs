@@ -7,6 +7,9 @@ public class ActivateDeathCamera : MonoBehaviour {
 	public GameObject newDistance;
 	public GameObject newScore;
 
+	public AudioSource deathAudioSource;
+	public AudioClip victory;
+
 	void Start() {
 		NotificationCenter.DefaultCenter().AddObserver(this, "playerIsDead");
 		NotificationCenter.DefaultCenter().AddObserver(this, "newHighScore");
@@ -18,10 +21,12 @@ public class ActivateDeathCamera : MonoBehaviour {
 	}
 
 	void newMaxDistance(Notification notification){
+		deathAudioSource.audio.clip = victory;
 		newDistance.SetActive (true);
 	}
 
 	void newHighScore(Notification notification){
+		deathAudioSource.audio.clip = victory;
 		newScore.SetActive (true);
 	}
 

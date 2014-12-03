@@ -3,6 +3,8 @@ using System.Collections;
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using GooglePlayGames;
+using UnityEngine.SocialPlatforms;
 
 public class DataShare : MonoBehaviour {
 
@@ -19,6 +21,9 @@ public class DataShare : MonoBehaviour {
 		if (dataShare == null){
 			dataShare = this;
 			DontDestroyOnLoad(gameObject);
+
+			PlayGamesPlatform.Activate();
+
 		}else if(dataShare !=this){
 			Destroy(gameObject);
 		}
@@ -26,6 +31,9 @@ public class DataShare : MonoBehaviour {
 
 	void Start(){
 		Load();
+
+		((PlayGamesPlatform)Social.Active).Authenticate ((bool success) => {}, true);
+
 	}
 
 	public void Save(){

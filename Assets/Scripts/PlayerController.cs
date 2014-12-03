@@ -15,6 +15,10 @@ public class PlayerController : MonoBehaviour {
 	private bool allowDoubleJump = true;
 	private bool dead = false;
 
+	public AudioClip jumpSound;
+	public AudioClip slideSound;
+	
+	
 	private Animator animator;
 
 	void Awake(){
@@ -55,16 +59,23 @@ public class PlayerController : MonoBehaviour {
 		if (running && grounded) {
 			slideing = true;
 			animator.SetBool ("slideing", slideing);
+			audio.clip = slideSound;
+			if(audio) audio.Play ();
 		}
 	}
 
 	void jump(){
 		if(running && !slideing){
 
-			if (grounded)
+			if (grounded){
 				rigidbody2D.velocity =  new Vector2 (rigidbody2D.velocity.y, fuerzaSalto);
-			else if (!grounded && allowDoubleJump)
+				audio.clip = jumpSound;
+				if(audio) audio.Play ();
+			}
+			else if (!grounded && allowDoubleJump){
 				rigidbody2D.velocity =  new Vector2 (rigidbody2D.velocity.y, fuerzaSalto);
+				if(audio) audio.Play ();
+			}
 
 			if (grounded) allowDoubleJump = true;
 			else allowDoubleJump = false;
@@ -102,6 +113,8 @@ public class PlayerController : MonoBehaviour {
 	
 	void startRunning(Notification notification){
 		running = true;
+		GetComponent<TouchControl>().enabled = true;
+		animator.SetBool ("running", running);
 	}
 
 }
