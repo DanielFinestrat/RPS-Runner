@@ -1,0 +1,3 @@
+Mejorado audio en el menú(Cuando clicas en una opción se espera y entonces te lleva al medallero/ranking)
+
+Ya está subido el codigo de versión de aplicación(listo para publicar)

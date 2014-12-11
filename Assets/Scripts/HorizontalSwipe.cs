@@ -66,6 +66,12 @@ public class HorizontalSwipe : MonoBehaviour {
 						
 						lastSwipeTime = Time.time;
 						
+					}else if(swipeDist < minSwipeDist && swipeTime < maxSwipeTime){
+						
+						// ############# JUST ONE TAP #############
+						
+						//NotificationCenter.DefaultCenter().PostNotification(this, "swipeRight");
+						
 					}
 				}
 				break;

@@ -17,9 +17,15 @@ public class BadgerFolder : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		
-		if(audio)audio.Play ();
-		
+		if(audio){
+			audio.Play ();
+			Invoke ("loadBadger", audio.clip.length);
+		}else{
+			Invoke ("loadBadger", 0f);
+		}
+	}
+
+	void loadBadger(){		
 		if(Social.localUser.authenticated){
 			Social.Active.ShowAchievementsUI();
 		}

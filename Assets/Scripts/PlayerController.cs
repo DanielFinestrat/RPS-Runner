@@ -114,6 +114,7 @@ public class PlayerController : MonoBehaviour {
 	void startRunning(Notification notification){
 		running = true;
 		GetComponent<TouchControl>().enabled = true;
+		GetComponent<HorizontalSwipe>().enabled = false;
 		animator.SetBool ("running", running);
 	}
 

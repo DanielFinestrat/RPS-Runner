@@ -18,15 +18,19 @@ public class Ranking : MonoBehaviour {
 
 	void OnMouseDown(){
 
-		if(audio)audio.Play ();
-
-		if(Social.localUser.authenticated){
-			((PlayGamesPlatform)Social.Active).ShowLeaderboardUI("CgkIgerN_qwBEAIQCA");
+		if(audio){
+			audio.Play ();
+			Invoke ("loadRanking", audio.clip.length);
+		}else{
+			Invoke ("loadRanking", 0f);
 		}
-		else{ 
-			Social.localUser.Authenticate((bool success) => {});
-		}
+	}
 
+	void loadRanking(){
+
+		if(Social.localUser.authenticated)	((PlayGamesPlatform)Social.Active).ShowLeaderboardUI("CgkIgerN_qwBEAIQCA");
+
+		else 	Social.localUser.Authenticate((bool success) => {});
 	}
 
 }
