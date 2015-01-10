@@ -7,7 +7,7 @@ public class showScore : MonoBehaviour {
 	public TextMesh MaxDistance;
 	
 	void Update(){
-		HighScore.text = DataShare.dataShare.highScore.ToString()+"$";
+		HighScore.text = DataShare.dataShare.highScore.ToString();
 		MaxDistance.text = DataShare.dataShare.maxDistance.ToString()+"m";
 	}
 	

@@ -26,7 +26,7 @@ public class scoreKeeper : MonoBehaviour {
 	}
 
 	void updateScore(){
-		scoreBoard.text = score.ToString () + "$";
+		scoreBoard.text = score.ToString ();
 	}
 
 	void getCoin(Notification notification){

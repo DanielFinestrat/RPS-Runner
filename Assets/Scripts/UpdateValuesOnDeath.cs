@@ -14,9 +14,9 @@ public class UpdateValuesOnDeath : MonoBehaviour {
 
 	void OnEnable(){
 		DataShare.dataShare.Save();
-		Score.text = scoreKeeper.score.ToString()+"$";
+		Score.text = scoreKeeper.score.ToString();
 		Distance.text = distanceCounter.distance.ToString()+"m";
-		HighScore.text = DataShare.dataShare.highScore.ToString()+"$";
+		HighScore.text = DataShare.dataShare.highScore.ToString();
 		MaxDistance.text = DataShare.dataShare.maxDistance.ToString()+"m";
 	}
 

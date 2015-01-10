@@ -4,8 +4,12 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
 	public float fuerzaSalto = 200f;
-	public float velocidadMovimiento = 200f;
-
+	public float velocidadMovimiento = 11f;
+	public float incrementoDificultad = 1.5f;
+	public float velocidadCaida = 11f;
+	
+	public DistanceCounter distanceCounter;
+	public PauseButton PauseScript;
 	public LayerMask ground;
 	public Transform OPA, OPB;
 
@@ -14,12 +18,17 @@ public class PlayerController : MonoBehaviour {
 	private bool running = false;
 	private bool allowDoubleJump = true;
 	private bool dead = false;
+	private bool isPaused;
 
 	public AudioClip jumpSound;
 	public AudioClip slideSound;
-	
+	public AudioClip fallSound;
 	
 	private Animator animator;
+
+	private float aumentos = 0;
+	private int veces = 0;
+	private int distancia = 0;
 
 	void Awake(){
 		animator = GetComponent<Animator> ();
@@ -38,9 +47,16 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Update () {
+		distancia = distanceCounter.distance - (veces*100);
+		if (distancia == 100) {
+			distancia = 0;
+			veces = veces + 1;
+			aumentos = aumentos + incrementoDificultad;
+		}
 
-		if(running)
-			rigidbody2D.velocity = new Vector2 (velocidadMovimiento, rigidbody2D.velocity.y);
+		if (running){
+			rigidbody2D.velocity = new Vector2 (velocidadMovimiento + aumentos, rigidbody2D.velocity.y);
+		}
 
 		#if UNITY_EDITOR || UNITY_STANDALONE_WIN
 		if(Input.GetKeyDown("up")){
@@ -56,16 +72,23 @@ public class PlayerController : MonoBehaviour {
 	//###################################### ACTIONS ######################################
 
 	void slide(){
-		if (running && grounded) {
+		if (running && grounded && !PauseScript.paused){
 			slideing = true;
 			animator.SetBool ("slideing", slideing);
 			audio.clip = slideSound;
 			if(audio) audio.Play ();
 		}
+		else if(!grounded){
+			//Cortar salto
+			audio.clip = fallSound;
+			if(audio) audio.Play ();
+			rigidbody2D.velocity = new Vector2 (velocidadMovimiento + aumentos, -velocidadCaida);
+
+		}
 	}
 
 	void jump(){
-		if(running && !slideing){
+		if(running && !slideing && !PauseScript.paused){
 
 			if (grounded){
 				rigidbody2D.velocity =  new Vector2 (rigidbody2D.velocity.y, fuerzaSalto);
