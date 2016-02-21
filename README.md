@@ -6,17 +6,23 @@ Estás demasiado cansado de luchar, corre y esquiva para ser libre! Coge las roc
 
 ### Mejoras 1.8:
 *- ¡Publicidad eliminada!
+
 *- Intro añadida.
+
 *- Algunos errores menores arreglados.
 
 ### Mejoras 1.6:
 *- Mejorada la aparición de Piedras.
+
 *- Menú de GameOver mejorado.
+
 *- Algunos errores menores arreglados
 
 ### Mejoras 1.5:
 *- Botón de pausa.
+
 *- Controles mejorados(Salto mientras te deslizas y posibilidad de cortar el salto).
+
 *- Sistema de incremento de dificultad.
 
 ### Mejoras 1.4:
@@ -24,12 +30,16 @@ Estás demasiado cansado de luchar, corre y esquiva para ser libre! Coge las roc
 
 ### Mejoras 1.3:
 *- Tutoriales mejorados.
+
 *- Mejor optimizado.
 
 ### Mejoras 1.1:
 *- Añadido sonido de Victoria.
+
 *- Mejorados algunos errores.
 
 Agradecimiento especial a Juan de Dios por sus tutoriales: https://www.youtube.com/user/juande
+
 Disponible en la PlayStore: https://play.google.com/store/apps/details?id=com.garagefruit.games.rps_runner
-RPS Runner Turbo, secuela de este juego: https://play.google.com/store/apps/details?id=com.twocoinsgames.rps_runner_turbo
+
+RPS Runner Turbo, secuela de este juego, disponible en PlayStore: https://play.google.com/store/apps/details?id=com.twocoinsgames.rps_runner_turbo
