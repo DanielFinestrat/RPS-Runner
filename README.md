@@ -4,8 +4,6 @@ RPS Runner es un juego del tipo Endless Runner para Android desarrollado en Unit
 
 Estás demasiado cansado de luchar, corre y esquiva para ser libre! Coge las rocas para ganar puntos y esquiva las tijeras para llegar tan lejos como puedas. Corre(desliza a la derecha), salta(toca o desliza arriba), y agáchate(desliza abajo) para moverte por el nivel y huir de tus adversarios.
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 # Mejoras 1.8:
 *- ¡Publicidad eliminada!
 
@@ -39,8 +37,6 @@ Estás demasiado cansado de luchar, corre y esquiva para ser libre! Coge las roc
 *- Añadido sonido de Victoria.
 
 *- Mejorados algunos errores.
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Agradecimiento especial a Juan de Dios por sus tutoriales: https://www.youtube.com/user/juande
 
