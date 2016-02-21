@@ -1,0 +1,185 @@
+fileFormatVersion: 2
+guid: 1f354bea3f45d524b987069ac89554d4
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: PacoBocaFeliz
+    21300002: Avion
+    21300004: Piedra
+    21300006: bocetos_3
+    21300008: bocetos_4
+    21300010: ManoIzq
+    21300012: Paco
+    21300014: PacoMuerte1
+    21300016: ManoDcha
+    21300018: Tijera1
+    21300020: PacoMuerte2
+    21300022: Pierna1
+    21300024: Tijera2
+    21300026: Pierna2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 2
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -3
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: PacoBocaFeliz
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1071
+        width: 111
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Avion
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 1043
+        width: 315
+        height: 196
+      alignment: 9
+      pivot: {x: .465505242, y: .339229673}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Piedra
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 897
+        width: 125
+        height: 116
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ManoIzq
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 680
+        width: 100
+        height: 64
+      alignment: 9
+      pivot: {x: .233507693, y: .708197594}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Paco
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 490
+        width: 214
+        height: 374
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PacoMuerte1
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 632
+        width: 187
+        height: 221
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ManoDcha
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 536
+        width: 80
+        height: 82
+      alignment: 9
+      pivot: {x: .183937073, y: .284403741}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tijera1
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 511
+        width: 279
+        height: 157
+      alignment: 9
+      pivot: {x: .597364426, y: .569209576}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PacoMuerte2
+      rect:
+        serializedVersion: 2
+        x: 1538
+        y: 396
+        width: 208
+        height: 167
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Pierna1
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 407
+        width: 76
+        height: 74
+      alignment: 9
+      pivot: {x: .685864091, y: .852407515}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tijera2
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 289
+        width: 278
+        height: 158
+      alignment: 9
+      pivot: {x: .582080424, y: .431229025}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Pierna2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 317
+        width: 69
+        height: 72
+      alignment: 9
+      pivot: {x: .358271956, y: .816922069}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
