@@ -46,3 +46,5 @@ Agradecimiento especial a Juan de Dios por sus tutoriales: https://www.youtube.c
 Disponible en la PlayStore: https://play.google.com/store/apps/details?id=com.garagefruit.games.rps_runner
 
 RPS Runner Turbo, secuela de este juego, disponible en PlayStore: https://play.google.com/store/apps/details?id=com.twocoinsgames.rps_runner_turbo
+
+Daniel Finestrat Martinez, 2014.
