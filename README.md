@@ -41,7 +41,7 @@ ____
 
 ____
 ____
-Agradecimiento especial a Juan de Dios por sus tutoriales: https://www.youtube.com/user/juande
+Agradecimiento especial a Juan de Dios por sus[tutoriales] (https://www.youtube.com/user/juande).
 
 RPS Runner está disponible en la [Play Store](https://play.google.com/store/apps/details?id=com.garagefruit.games.rps_runner).
 
