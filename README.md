@@ -1,6 +1,6 @@
 # RPS Runner
 
-RPS Runner es un juego del tipo Endless Runner para Android desarrollado en Unity usando C# para los scripts.
+RPS Runner es un juego del tipo Endless Runner para Android desarrollado en Unity(4.6.8f1) usando C# para los scripts.
 
 Estás demasiado cansado de luchar, corre y esquiva para ser libre! Coge las rocas para ganar puntos y esquiva las tijeras para llegar tan lejos como puedas. Corre(desliza a la derecha), salta(toca o desliza arriba), y agáchate(desliza abajo) para moverte por el nivel y huir de tus adversarios.
 ____
