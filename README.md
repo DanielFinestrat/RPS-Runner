@@ -8,4 +8,4 @@ RPS Runner está disponible en la [Play Store](https://play.google.com/store/app
 
 RPS Runner Turbo, la secuela de este juego, también está disponible en la [Play Store](https://play.google.com/store/apps/details?id=com.twocoinsgames.rps_runner_turbo).
 
-[Daniel Finestrat Martinez, 2014.](https://danielfinestrat.com)
+2014.
